@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InnovAIte | Hackathon Project</title>
+    <style>
+      :root {
+        --bg: #f6f5ef;
+        --ink: #151515;
+        --brand: #e65f2b;
+        --brand-2: #2f6b5e;
+        --card: #fffdf7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at 20% 20%, #fff 0%, var(--bg) 50%, #ece9dc 100%);
+        min-height: 100vh;
+      }
+
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 48px 20px 72px;
+      }
+
+      .hero {
+        border: 2px solid var(--ink);
+        border-radius: 22px;
+        padding: 34px;
+        background: linear-gradient(135deg, #fff 0%, #fdf7ea 55%, #f4efe0 100%);
+        box-shadow: 8px 8px 0 var(--ink);
+        animation: rise 650ms ease-out;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--brand-2);
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+      }
+
+      p {
+        margin-top: 14px;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        max-width: 68ch;
+      }
+
+      .actions {
+        margin-top: 22px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 2px solid var(--ink);
+        font-weight: 700;
+      }
+
+      .btn.primary {
+        color: #fff;
+        background: var(--brand);
+      }
+
+      .btn.secondary {
+        color: var(--ink);
+        background: #fff;
+      }
+
+      .grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+
+      .card {
+        border: 2px solid var(--ink);
+        border-radius: 14px;
+        background: var(--card);
+        padding: 16px;
+        box-shadow: 5px 5px 0 rgba(21, 21, 21, 0.15);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      footer {
+        margin-top: 18px;
+        font-size: 0.85rem;
+        opacity: 0.8;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 22px;
+          box-shadow: 5px 5px 0 var(--ink);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <span class="tag">Hackathon 2026</span>
+        <h1>InnovAIte</h1>
+        <p>
+          We are building practical AI tools that solve real-world team workflows. This landing page is live and
+          ready for demo judges, teammates, and early users.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#">Try Demo</a>
+          <a class="btn secondary" href="#">View GitHub</a>
+        </div>
+      </section>
+
+      <section class="grid" aria-label="Project highlights">
+        <article class="card">
+          <h2>Problem</h2>
+          <p>Teams lose time jumping across tools and context while making decisions.</p>
+        </article>
+        <article class="card">
+          <h2>Solution</h2>
+          <p>AI-assisted workflows that summarize, prioritize, and propose next actions.</p>
+        </article>
+        <article class="card">
+          <h2>Status</h2>
+          <p>MVP is active for hackathon judging and rapid iteration with user feedback.</p>
+        </article>
+      </section>
+
+      <footer>Built by Team InnovAIte.</footer>
+    </main>
+  </body>
+</html>
