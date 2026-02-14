@@ -1,6 +1,8 @@
 import homeBackground from '../assets/home-page-background.jpg';
 
-export function HomePage() {
+export function HomePage({ onOpenLogin, onOpenSignup, onOpenJournals, currentUser, onLogout }) {
+  const userInitial = currentUser?.displayName?.[0]?.toUpperCase() || currentUser?.email?.[0]?.toUpperCase() || 'U';
+
   return (
     <main
       className="landing"
@@ -18,16 +20,44 @@ export function HomePage() {
               <a href="#" className="nav-link">Analysis</a>
             </li>
             <li>
-              <a href="#" className="nav-link">Journal Entry</a>
+              <button
+                type="button"
+                className="nav-link nav-link-btn"
+                onClick={currentUser ? onOpenJournals : onOpenSignup}
+              >
+                Journal Entry
+              </button>
             </li>
           </ul>
         </nav>
+
+        <div className="auth-actions" aria-label="Account actions">
+          {currentUser ? (
+            <button type="button" className="user-icon" aria-label="Signed in user" title="Click to log out" onClick={onLogout}>
+              {userInitial}
+            </button>
+          ) : (
+            <>
+              <button type="button" className="auth-action auth-ghost" onClick={onOpenLogin}>
+                Log in
+              </button>
+              <button type="button" className="auth-action auth-solid" onClick={onOpenSignup}>
+                Sign up
+              </button>
+            </>
+          )}
+        </div>
       </header>
 
       <section className="hero">
         <div className="hero-copy">
           <h1>Hello! What&apos;s on your mind today?</h1>
-          <button type="button" className="journal-btn" aria-label="Create a new journal entry">
+          <button
+            type="button"
+            className="journal-btn"
+            aria-label="Create a new journal entry"
+            onClick={currentUser ? onOpenJournals : onOpenLogin}
+          >
             <span>new journal entry</span>
             <span className="plus" aria-hidden="true">+</span>
           </button>
